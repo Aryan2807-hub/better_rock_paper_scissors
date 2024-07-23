@@ -1,22 +1,128 @@
-*{
-    padding:0%;
-    margin: 0%;
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: darkgrey;
+
+body {
+    background-color: #121212; /* Dark background color */
+    color: #e0e0e0; /* Light text color for contrast */
+    font-family: Arial, sans-serif; /* Clean font */
 }
-.score{
-    display:flex;
-    background-color: bisque;
-    flex-wrap: wrap;
+
+/* Score Section */
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1f1f1f; /* Darker background for the score section */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#sc {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#myScore, #computer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#plscr, #aiscr {
+    font-size: 36px; /* Larger text for scores */
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
     justify-content: center;
-    justify-content:space-around;
+    margin-bottom: 20px;
+}
 
+button {
+    background-color: #333; /* Dark button background */
+    color: #fff; /* White text for contrast */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #555; /* Slightly lighter button on hover */
+}
+
+button:active {
+    transform: scale(0.98); /* Slight scale effect on click */
+}
+
+/* Emoji Animation */
+.animation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+    background-color: #1f1f1f; /* Darker background for animation area */
+}
+
+.emoji {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%; /* Circular border */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #444; /* Slightly lighter dark background for emoji containers */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    position: relative; /* To ensure image positioning inside */
+    margin: 0 20px; /* Space between emoji containers */
+}
+
+.emoji img {
+    width: 100%; /* Ensure image fills container width */
+    height: 100%; /* Ensure image fills container height */
+    object-fit: cover; /* Ensures image covers the container */
+}
+
+.reset {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.reset button {
+    margin: 0 10px;
+}
+@keyframes rotate-clockwise{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform:rotate(95deg);
+    }
+}
+@keyframes rotate-anticlockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-95deg);
+    }
+}
+.rotate-clockwise {
+    animation: rotate-clockwise 1s forwards;
 
 }
-#sc{
-    display: block;
-    width:100%;
-    text-align: center;
-    
+.rotate-anticlockwise{
+    animation:rotate-anticlockwise 1s forwards;
 }
