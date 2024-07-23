@@ -89,10 +89,11 @@ let AII=()=>{
 let addreset=()=>{
     player=0;
     ai=0;
+    updatescores();
 };
 
 
-reset.addEventListener("click",addreset());
+reset.addEventListener("click",addreset);
 rock.addEventListener("click",rockk);
 scissors.addEventListener("click",scissorss);
 paper.addEventListener("click",paperr);

@@ -5,3 +5,18 @@
 body{
     background-color: darkgrey;
 }
+.score{
+    display:flex;
+    background-color: bisque;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content:space-around;
+
+
+}
+#sc{
+    display: block;
+    width:100%;
+    text-align: center;
+    
+}
