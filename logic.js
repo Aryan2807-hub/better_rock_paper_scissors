@@ -3,10 +3,24 @@ let paper= document.getElementById("paper");
 let scissors= document.getElementById("scissors");
 let playerscore=document.getElementById("plscr");
 let aiscore=document.getElementById("aiscr");
+let reset=document.getElementById("reset");
 let a="";
 let b="";
 let player=0;
 let ai=0;
+playerscore.innerText=0;
+aiscore.innerText=0;
+
+
+
+
+let updatescores=()=>{
+    playerscore.innerText=`${player}`;
+    aiscore.innerText=`${ai}`;
+};
+
+
+
 let rockk=() =>{
     a="rock";
     AII();
@@ -70,11 +84,15 @@ let AII=()=>{
     }
 };
 
-let updatescores=()=>{
-    playerscore.innerText=`${player}`;
-    aiscore.innerText=`${ai}`;
+
+
+let addreset=()=>{
+    player=0;
+    ai=0;
 };
 
+
+reset.addEventListener("click",addreset());
 rock.addEventListener("click",rockk);
 scissors.addEventListener("click",scissorss);
 paper.addEventListener("click",paperr);
