@@ -8,6 +8,7 @@ let you = document.getElementById("you").querySelector("img");
 let comp = document.getElementById("comp").querySelector("img");
 let animation=document.getElementsByClassName("emoji");
 let nxtround=document.getElementById("next round");
+let won=document.querySelector(".won");
 
 
 
@@ -39,20 +40,21 @@ let rockk=() =>{
     animate();
 
     if (b==="rock") {
-
-
+        won.innerText="Tie";
     }
     else if (b==="scissors"){
         
         player+=1;
+        won.innerText = "Player Won";
         
     }
     else if (b==="paper"){
     
         ai+=1;
+        won.innerText = "Computer Won";
        
     }
-    whowon();
+
     
 };
 let paperr=() =>{
@@ -65,19 +67,21 @@ let paperr=() =>{
     if (b==="rock") {
        
         player+=1;
+        won.innerText = "Player Won";
         
         
     }
     else if (b==="scissors"){
        
         ai+=1;
+        won.innerText = "Computer Won";
         
     }
     else if (b==="paper"){
      
-        
+        won.innerText="Tie";
     }
-    whowon();
+    
     
     
 
@@ -92,18 +96,19 @@ let scissorss=()=>{
     if (b==="rock") {
        
         ai+=1;
+        won.innerText = "Computer Won";
         
     }
     else if (b==="scissors"){
-     
+        won.innerText="Tie";
        
     }
     else if (b==="paper"){
 
         player+=1;
-       
+        won.innerText = "Player Won";
     }
-    whowon();
+    
     
     
 };
@@ -120,17 +125,7 @@ let AII=()=>{
     }
 };
 
-let whowon=()=>{
-    if (player+=1){
-        console.log("player won")
-    }
-    else if (ai+=1){
-        console.log("computer won")
-    }
-    else{
-        console.log("tie")
-    }
-};
+
 
 let addreset=()=>{
     player=0;
@@ -142,6 +137,7 @@ let nextround=()=>{
     you.classList.remove("rotate-clockwise");
     comp.classList.remove("rotate-anticlockwise");
     updatescores();
+    won.innerText="";
 
     resetImages();
 }
